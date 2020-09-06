@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 export default function Navbar() {
+  const auth = useSelector(state => state.auth);
   return (
     <Nav>
       <Brand to="/">brand</Brand>
