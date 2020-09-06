@@ -5,11 +5,12 @@ import { useSelector } from 'react-redux'
 
 export default function Navbar() {
   const auth = useSelector(state => state.auth);
+  console.log(auth);
   return (
     <Nav>
       <Brand to="/">brand</Brand>
       <Links>
-        <Li to="/singup">SignUp</Li>
+        <Li to="/signup">SignUp</Li>
         <Li to="/login">LogIn</Li>
         <Li to="/profile">Profile</Li>
         <Li to="/LogOut">LogOut</Li>

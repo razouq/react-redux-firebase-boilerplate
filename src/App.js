@@ -8,6 +8,8 @@ import {
 import Navbar from './components/layouts/Navbar';
 import Home from './components/page/Home';
 import CreateEntity from './components/entity/CreateEntity';
+import LogIn from './components/auth/LogIn';
+import SignUp from './components/auth/SignUp';
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path="/create-entity">
             <CreateEntity></CreateEntity>
+          </Route>
+          <Route path="/login">
+            <LogIn></LogIn>
+          </Route>
+          <Route path="/signup">
+            <SignUp></SignUp>
           </Route>
         </Switch>
       </Container>
