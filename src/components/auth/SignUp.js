@@ -9,11 +9,14 @@ export default function Signup() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
   const onSubmit = async e => {
     e.preventDefault();
     try {
-      history.push('/');
+      console.log(email, password, firstName, lastName);
+      // history.push('/');
     } catch(err) {
       console.log(err);
     }
@@ -25,11 +28,11 @@ export default function Signup() {
       <Form onSubmit={e => onSubmit(e)}>
         <Field>
           <Label htmlFor="eFirstNamemail">FirstName :</Label><br/>
-          <Input type="text" id="FirstName" onChange={(e) => setEmail(e.target.value)}/>
+          <Input type="text" id="FirstName" onChange={(e) => setFirstName(e.target.value)}/>
         </Field>
         <Field>
           <Label htmlFor="LastName">LastName :</Label><br/>
-          <Input type="text" id="LastName" onChange={(e) => setEmail(e.target.value)}/>
+          <Input type="text" id="LastName" onChange={(e) => setLastName(e.target.value)}/>
         </Field>
         <Field>
           <Label htmlFor="email">Email :</Label><br/>
@@ -39,7 +42,7 @@ export default function Signup() {
           <Label htmlFor="password">Password :</Label><br/>
           <Input type="password" id="password" onChange={(e) => setPassword(e.target.value)}/>
         </Field>
-        <Button type="submit">Login</Button>
+        <Button type="submit">SignUp</Button>
       </Form>
     </Card>
   )
