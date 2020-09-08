@@ -1,4 +1,4 @@
-export const signIn = (credentionls) => {
+export const logIn = (credentionls) => {
   return (dispatch, getState, {getFirebase}) => {
     const firebase = getFirebase();
     firebase.auth().signInWithEmailAndPassword(
@@ -18,7 +18,7 @@ export const signIn = (credentionls) => {
   }
 }
 
-export const signOut = () => {
+export const logOut = () => {
   return (dispatch, getState, {getFirebase}) => {
     const firebase = getFirebase();
     firebase.auth().signOut().then(() => {

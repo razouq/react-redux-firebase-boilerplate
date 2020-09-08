@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import {logOut} from '../../store/actions/authActions';
+
 
 export default function Navbar() {
   const auth = useSelector(state => state.auth);
+  const dispatch = useDispatch();
   console.log(auth);
   return (
     <Nav>
@@ -13,7 +16,7 @@ export default function Navbar() {
         <Li to="/signup">SignUp</Li>
         <Li to="/login">LogIn</Li>
         <Li to="/profile">Profile</Li>
-        <Li to="/LogOut">LogOut</Li>
+        <Li to="/" onClick={e => dispatch(logOut())}>LogOut</Li>
       </Links>
     </Nav>
   )
