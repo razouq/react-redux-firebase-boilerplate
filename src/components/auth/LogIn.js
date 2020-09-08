@@ -1,9 +1,11 @@
 import React, {useState, useContext} from 'react'
 import styled from 'styled-components'
 import {useHistory} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function Signup() {
   
+  const firebase = useSelector(state => state.firebase);
   
   const history = useHistory();
 
@@ -13,6 +15,7 @@ export default function Signup() {
   const onSubmit = async e => {
     e.preventDefault();
     try {
+      
       history.push('/');
     } catch(err) {
       console.log(err);
