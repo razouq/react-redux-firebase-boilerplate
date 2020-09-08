@@ -8,7 +8,8 @@ import thunk from 'redux-thunk';
 import { createFirestoreInstance } from 'redux-firestore';
 import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import firebase from './config/firebase';
-import { isLoaded } from 'react-redux-firebase'
+import { isLoaded } from 'react-redux-firebase';
+import './index.css'
 
 
 const store = createStore(rootReducer, 
