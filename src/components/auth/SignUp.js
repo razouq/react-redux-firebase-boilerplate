@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import {useHistory, Redirect} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../../store/actions/authActions';
@@ -25,7 +25,7 @@ export default function Signup() {
     }
   }
 
-  if(auth.uid) return <Redirect to="/"/>
+  if(auth.uid) return <Redirect to="/"/>;
   
   return (
     <Card>

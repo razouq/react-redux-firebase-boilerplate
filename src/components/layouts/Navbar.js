@@ -8,7 +8,6 @@ import GuestLinks from './GuestLinks';
 
 export default function Navbar() {
   const auth = useSelector(state => state.auth);
-  console.log(auth);
   return (
     <Nav>
       <Brand to="/">brand</Brand>
