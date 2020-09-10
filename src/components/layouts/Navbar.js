@@ -1,23 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
-import {logOut} from '../../store/actions/authActions';
+import { useSelector } from 'react-redux'
+import UserLinks from './UserLinks';
+import GuestLinks from './GuestLinks';
 
 
 export default function Navbar() {
   const auth = useSelector(state => state.auth);
-  const dispatch = useDispatch();
   console.log(auth);
   return (
     <Nav>
       <Brand to="/">brand</Brand>
-      <Links>
-        <Li to="/signup">SignUp</Li>
-        <Li to="/login">LogIn</Li>
-        <Li to="/profile">Profile</Li>
-        <Li to="/" onClick={e => dispatch(logOut())}>LogOut</Li>
-      </Links>
+      {auth.uid?<UserLinks/>:<GuestLinks/>}
     </Nav>
   )
 }
