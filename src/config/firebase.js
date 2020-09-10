@@ -13,7 +13,6 @@ const fbConfig = {
   measurementId: "G-B30DDY8G9M",
 };
 
-
 firebase.initializeApp(fbConfig);
 firebase.firestore();
 

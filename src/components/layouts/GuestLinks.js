@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function GuestLinks() {
   return (
@@ -8,7 +8,7 @@ export default function GuestLinks() {
       <Li to="/signup">SignUp</Li>
       <Li to="/login">LogIn</Li>
     </Links>
-  )
+  );
 }
 
 const Links = styled.ul`

@@ -1,46 +1,51 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import { Redirect} from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import {logIn} from '../../store/actions/authActions';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logIn } from "../../store/actions/authActions";
 
 export default function Signup() {
-  
-  const {auth} = useSelector(state => state.firebase);
+  const { auth } = useSelector((state) => state.firebase);
   // const history = useHistory();
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      dispatch(logIn({email, password}));
+      dispatch(logIn({ email, password }));
       // history.push('/');
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
-  if(auth.uid) return <Redirect to="/" />
+  if (auth.uid) return <Redirect to="/" />;
 
   return (
     <Card>
       <CardTitle>LogIn</CardTitle>
-      <Form onSubmit={e => onSubmit(e)}>
+      <Form onSubmit={(e) => onSubmit(e)}>
         <Field>
-          <Label htmlFor="email">Email :</Label><br/>
-          <Input type="text" id="email" onChange={(e) => setEmail(e.target.value)}/>
+          <Label htmlFor="email">Email :</Label>
+          <br />
+          <Input type="text" id="email" onChange={(e) => setEmail(e.target.value)} />
         </Field>
         <Field>
-          <Label htmlFor="password">Password :</Label><br/>
-          <Input type="password" id="password" onChange={(e) => setPassword(e.target.value)}/>
+          <Label htmlFor="password">Password :</Label>
+          <br />
+          <Input
+            type="password"
+            id="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </Field>
         <Button type="submit">Login</Button>
       </Form>
     </Card>
-  )
+  );
 }
 
 const Card = styled.div`
