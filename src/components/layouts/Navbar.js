@@ -32,21 +32,3 @@ const Brand = styled(Link)`
   color: black;
 `;
 
-const Links = styled.ul`
-  display: flex;
-  padding: 1rem;
-  list-style: none;
-`;
-
-const Li = styled(Link)`
-  background-color: white;
-  margin-left: 2rem;
-  text-decoration: none;
-  color: black;
-  font-size: 1.2rem;
-  &:hover {
-    color: #aaa;
-  }
-`;
-
-
