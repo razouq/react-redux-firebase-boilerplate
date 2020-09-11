@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Redirect } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { logIn } from "../../store/actions/authActions";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logIn } from '../../store/actions/authActions';
 
 export default function Signup() {
   const { auth } = useSelector((state) => state.firebase);
   // const history = useHistory();
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();

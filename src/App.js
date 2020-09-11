@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/layouts/Navbar";
-import Home from "./components/page/Home";
-import CreateEntity from "./components/entity/CreateEntity";
-import LogIn from "./components/auth/LogIn";
-import SignUp from "./components/auth/SignUp";
+import React from 'react';
+import styled from 'styled-components';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/layouts/Navbar';
+import Home from './components/page/Home';
+import CreateEntity from './components/entity/CreateEntity';
+import LogIn from './components/auth/LogIn';
+import SignUp from './components/auth/SignUp';
 
 function App() {
   return (

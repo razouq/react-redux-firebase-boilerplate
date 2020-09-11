@@ -1,26 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import { createStore, applyMiddleware, compose } from "redux";
-import { Provider, useSelector } from "react-redux";
-import rootReducer from "./store/reducers/rootReducer";
-import thunk from "redux-thunk";
-import { createFirestoreInstance } from "redux-firestore";
-import { getFirebase, ReactReduxFirebaseProvider } from "react-redux-firebase";
-import firebase from "./config/firebase";
-import { isLoaded } from "react-redux-firebase";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider, useSelector } from 'react-redux';
+import rootReducer from './store/reducers/rootReducer';
+import thunk from 'redux-thunk';
+import { createFirestoreInstance } from 'redux-firestore';
+import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import firebase from './config/firebase';
+import { isLoaded } from 'react-redux-firebase';
+import './index.css';
 
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase })),
+    applyMiddleware(thunk.withExtraArgument(getFirebase)),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   ),
 );
 
 const rrfConfig = {
-  userProfile: "users",
+  userProfile: 'users',
   useFirestoreForProfile: true,
 };
 
@@ -45,5 +45,5 @@ ReactDOM.render(
       </AuthIsLoaded>
     </ReactReduxFirebaseProvider>
   </Provider>,
-  document.getElementById("root"),
+  document.getElementById('root'),
 );

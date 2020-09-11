@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { logOut } from "../../store/actions/authActions";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../store/actions/authActions';
 
 export default function UserLinks() {
   const dispatch = useDispatch();

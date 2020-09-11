@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import UserLinks from "./UserLinks";
-import GuestLinks from "./GuestLinks";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import UserLinks from './UserLinks';
+import GuestLinks from './GuestLinks';
 
 export default function Navbar() {
   const auth = useSelector((state) => state.auth);
