@@ -1,29 +1,106 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import { createEntity } from '../../store/actions/entityActions';
 
 export default function CreateEntity() {
-  const [name, setName] = useState('');
   const dispatch = useDispatch();
+
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(createEntity({ name }));
+    dispatch(createEntity({ name, description }));
   };
 
   return (
     <div>
       <h1>Create Entity</h1>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="name">name</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <button type="submit">create</button>
-      </form>
+      <Form onSubmit={onSubmit}>
+        <Field>
+          <Label htmlFor="name">name</Label>
+          <Input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </Field>
+        <Field>
+          <Label htmlFor="description">description</Label>
+          <Textarea
+            rows="4"
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </Field>
+        <Button type="submit">create</Button>
+      </Form>
     </div>
   );
 }
+
+const Form = styled.form`
+  background-color: #f3724a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  padding: 1rem;
+`;
+
+const Field = styled.div`
+  margin: 1rem;
+  width: 80%;
+  display: flex;
+  align-items: center;
+`;
+
+const Label = styled.label`
+  display: inline-block;
+  margin: 1rem;
+  font-size: 1.2rem;
+  flex-basis: 20%;
+  text-align: right;
+`;
+
+const Input = styled.input`
+  flex-grow: 1;
+  height: 3rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid black;
+  margin: 1rem;
+  background-color: #eee;
+  outline: none;
+  flex-basis: 80%;
+  &:focus {
+    background-color: white;
+  }
+`;
+
+const Button = styled.button`
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  outline: none;
+  background-color: #f5f5f5;
+  width: 10rem;
+`;
+
+const Textarea = styled.textarea`
+  flex-basis: 80%;
+  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  overflow-y: scroll;
+  resize: none;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+`;
