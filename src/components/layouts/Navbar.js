@@ -6,7 +6,7 @@ import UserLinks from './UserLinks';
 import GuestLinks from './GuestLinks';
 
 export default function Navbar() {
-  const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.firebase.auth);
   return (
     <Nav>
       <Brand to="/">Brand</Brand>

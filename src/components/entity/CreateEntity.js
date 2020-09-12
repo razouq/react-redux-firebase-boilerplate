@@ -103,6 +103,10 @@ const Textarea = styled.textarea`
   outline: none;
   font-size: 1.2rem;
   padding: 1rem;
+  background-color: #eee;
+  &:focus {
+    background-color: white;
+  }
 `;
 
 const H1 = styled.h1`
