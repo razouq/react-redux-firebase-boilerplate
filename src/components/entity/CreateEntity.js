@@ -16,7 +16,7 @@ export default function CreateEntity() {
 
   return (
     <div>
-      <h1>Create Entity</h1>
+      <H1>Create Entity</H1>
       <Form onSubmit={onSubmit}>
         <Field>
           <Label htmlFor="name">name</Label>
@@ -103,4 +103,8 @@ const Textarea = styled.textarea`
   outline: none;
   font-size: 1.2rem;
   padding: 1rem;
+`;
+
+const H1 = styled.h1`
+  margin: 2.5rem;
 `;

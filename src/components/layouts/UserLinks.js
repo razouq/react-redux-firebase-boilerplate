@@ -29,6 +29,6 @@ const Li = styled(Link)`
   color: black;
   font-size: 1.2rem;
   &:hover {
-    color: #aaa;
+    color: #f3724a;
   }
 `;

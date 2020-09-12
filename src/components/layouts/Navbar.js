@@ -9,7 +9,7 @@ export default function Navbar() {
   const auth = useSelector((state) => state.auth);
   return (
     <Nav>
-      <Brand to="/">brand</Brand>
+      <Brand to="/">Brand</Brand>
       {auth.uid ? <UserLinks /> : <GuestLinks />}
     </Nav>
   );
@@ -27,5 +27,7 @@ const Brand = styled(Link)`
   font-size: 2rem;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: #f3724a;
+  letter-spacing: 0.6rem;
+  font-weight: 600;
 `;
