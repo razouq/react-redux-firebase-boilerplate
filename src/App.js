@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layouts/Navbar';
 import Home from './components/page/Home';
 import CreateEntity from './components/entity/CreateEntity';
+import ListEntities from './components/entity/ListEntities';
 import LogIn from './components/auth/LogIn';
 import SignUp from './components/auth/SignUp';
 
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/create-entity">
             <CreateEntity></CreateEntity>
+          </Route>
+          <Route path="/list-entities">
+            <ListEntities></ListEntities>
           </Route>
           <Route path="/login">
             <LogIn></LogIn>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { createEntity } from '../../store/actions/entityActions';
 
 export default function CreateEntity() {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -12,6 +14,7 @@ export default function CreateEntity() {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(createEntity({ name, description }));
+    history.push('/list-entities');
   };
 
   return (
