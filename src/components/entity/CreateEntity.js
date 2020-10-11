@@ -21,6 +21,7 @@ export default function CreateEntity() {
         <Field>
           <Label htmlFor="name">name</Label>
           <Input
+            size="1"
             type="text"
             id="name"
             value={name}
@@ -69,12 +70,12 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  flex-grow: 1;
   height: 3rem;
+  flex-wrap: wrap;
   font-size: 1.2rem;
   padding: 1rem;
-  border-radius: 0.2rem;
-  border: 1px solid black;
+  border-radius: 0.5rem;
+  border: 2px solid black;
   margin: 1rem;
   background-color: #eee;
   outline: none;
@@ -89,16 +90,33 @@ const Button = styled.button`
   border-radius: 1rem;
   font-size: 1.2rem;
   outline: none;
+  overflow: hidden;
   background-color: #f5f5f5;
   width: 10rem;
+  cursor: pointer;
+  border: 2px solid black;
+  text-decoration: none;
+  transition: all 0.3s;
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  &:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const Textarea = styled.textarea`
   flex-basis: 80%;
   margin: 1rem;
-  border: 1px solid black;
-  border-radius: 0.2rem;
-  overflow-y: scroll;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 2px #000;
+  border: 1px solid transparent;
+  overflow-y: visible;
   resize: none;
   outline: none;
   font-size: 1.2rem;

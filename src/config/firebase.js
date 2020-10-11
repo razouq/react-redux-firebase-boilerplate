@@ -14,6 +14,6 @@ const fbConfig = {
 };
 
 firebase.initializeApp(fbConfig);
-firebase.firestore();
+// firebase.firestore();
 
 export default firebase;
