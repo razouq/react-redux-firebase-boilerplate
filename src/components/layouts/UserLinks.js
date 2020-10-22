@@ -29,10 +29,11 @@ const Li = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
+  transition: all 0.3s;
+  font-weight: 600;
   &:hover {
     color: #f3724a;
   }
-  font-weight: 600;
 `;
 
 const Action = styled(Link)`
@@ -44,6 +45,7 @@ const Action = styled(Link)`
   padding: 1rem;
   border-radius: 1rem;
   font-weight: 600;
+  transition: all 0.3s ease-in-out;
   &:hover {
     color: #f3724a;
     background-color: white;
