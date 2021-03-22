@@ -3,17 +3,16 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const fbConfig = {
-  apiKey: 'AIzaSyAXRkOMELKFa5paVWCxzZIVC2UDhxCSrqM',
-  authDomain: 'react-firebase-9c88a.firebaseapp.com',
-  databaseURL: 'https://react-firebase-9c88a.firebaseio.com',
-  projectId: 'react-firebase-9c88a',
-  storageBucket: 'react-firebase-9c88a.appspot.com',
-  messagingSenderId: '724742235251',
-  appId: '1:724742235251:web:f627c5797f9b3b46167606',
-  measurementId: 'G-B30DDY8G9M',
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(fbConfig);
-// firebase.firestore();
 
 export default firebase;
