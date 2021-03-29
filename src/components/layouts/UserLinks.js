@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { logOut } from '../../store/actions/authActions';
-import { Action, Li, Links } from '../../Elements/layouts';
+import { logOut } from '@store/actions/authActions';
+import { Action, Li, Links } from '@elements/layouts';
 
 export default function UserLinks() {
   const dispatch = useDispatch();

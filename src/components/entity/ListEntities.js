@@ -1,15 +1,7 @@
 import React from 'react';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { useSelector } from 'react-redux';
-import {
-  DeleteButton,
-  EditButton,
-  H1,
-  Table,
-  Td,
-  Th,
-  Tr,
-} from '../../Elements/entity';
+import { DeleteButton, EditButton, H1, Table, Td, Th, Tr } from '@elements/entity';
 
 const ListEntities = () => {
   useFirestoreConnect([{ collection: 'entities' }]);

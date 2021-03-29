@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { createEntity } from '../../store/actions/entityActions';
+import { createEntity } from '@store/actions/entityActions';
 import {
   Button,
   Field,
@@ -10,7 +10,7 @@ import {
   Input,
   Label,
   Textarea,
-} from '../../Elements/entity';
+} from '../../elements/entity';
 
 export default function CreateEntity() {
   const history = useHistory();

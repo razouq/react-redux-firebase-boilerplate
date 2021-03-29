@@ -1,5 +1,5 @@
 import React from 'react';
-import { Li, Links } from '../../Elements/layouts';
+import { Li, Links } from '@elements/layouts';
 
 export default function GuestLinks() {
   return (

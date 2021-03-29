@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logIn } from '../../store/actions/authActions';
-import {
-  Button,
-  Card,
-  CardTitle,
-  Field,
-  Form,
-  Input,
-  Label,
-} from '../../Elements/auth';
+import { logIn } from '@store/actions/authActions';
+import { Button, Card, CardTitle, Field, Form, Input, Label } from '@elements/auth';
 
 export default function Signup() {
   const { auth } = useSelector((state) => state.firebase);
