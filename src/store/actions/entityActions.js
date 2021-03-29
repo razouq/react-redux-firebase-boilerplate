@@ -1,5 +1,4 @@
 export const createEntity = (entity) => {
-  console.log(entity);
   return (dispatch, getState, getFirebase) => {
     const firestore = getFirebase().firestore();
     return firestore

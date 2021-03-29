@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import UserLinks from './UserLinks';
 import GuestLinks from './GuestLinks';
+import { Brand, Nav } from '../../Elements/layouts';
 
 export default function Navbar() {
   const auth = useSelector((state) => state.firebase.auth);
@@ -14,20 +13,3 @@ export default function Navbar() {
     </Nav>
   );
 }
-
-const Nav = styled.div`
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #eee;
-`;
-
-const Brand = styled(Link)`
-  font-size: 2rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: #f3724a;
-  letter-spacing: 0.6rem;
-  font-weight: 600;
-`;

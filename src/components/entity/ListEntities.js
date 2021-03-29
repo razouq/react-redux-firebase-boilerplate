@@ -1,7 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { useSelector } from 'react-redux';
+import {
+  DeleteButton,
+  EditButton,
+  H1,
+  Table,
+  Td,
+  Th,
+  Tr,
+} from '../../Elements/entity';
 
 const ListEntities = () => {
   useFirestoreConnect([{ collection: 'entities' }]);
@@ -39,63 +47,3 @@ const ListEntities = () => {
 };
 
 export default ListEntities;
-
-const H1 = styled.h1`
-  margin: 2.5rem;
-`;
-
-const Table = styled.table`
-  /* border: 0.2rem solid black; */
-  /* padding: 1rem; */
-  border-spacing: 0;
-  width: 80%;
-  margin: 0 auto;
-  border: 1px solid #ddd;
-  border-collapse: collapse;
-`;
-
-const Tr = styled.tr`
-  padding: 0.5rem;
-`;
-
-const Th = styled.th`
-  padding: 0.5rem;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-`;
-
-const Td = styled.td`
-  padding: 0.5rem;
-  text-align: center;
-  border: 1px solid #ddd;
-`;
-
-const EditButton = styled.a`
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  margin: 0.5rem;
-  text-decoration: none;
-  color: #3185fc;
-  border-bottom: 0.1rem solid #3185fc;
-  border-radius: 2px;
-  transition: all 0.3s;
-  &:hover {
-    background-color: #3185fc;
-    color: white;
-  }
-`;
-
-const DeleteButton = styled.a`
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  margin: 0.5rem;
-  text-decoration: none;
-  color: #e4113f;
-  border-bottom: 0.1rem solid #e4113f;
-  border-radius: 2px;
-  transition: all 0.3s;
-  &:hover {
-    background-color: #e4113f;
-    color: white;
-  }
-`;

@@ -8,7 +8,6 @@ export const logIn = (credentionls) => {
         dispatch({
           type: 'LOGIN_SUCCESS',
         });
-        console.log('success login');
       })
       .catch((err) => {
         dispatch({
