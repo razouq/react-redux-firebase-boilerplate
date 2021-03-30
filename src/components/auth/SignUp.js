@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
 import { signUp } from '@store/actions/authActions';
 import { Button, Card, CardTitle, Field, Form, Input, Label } from '@elements/auth';
 
@@ -9,15 +10,16 @@ export default function Signup() {
   const history = useHistory();
   const { auth } = useSelector((state) => state.firebase);
 
+  const { register, handleSubmit } = useForm();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
     try {
-      dispatch(signUp({ email, password, firstName, lastName }));
+      dispatch(signUp(data));
       history.push('/');
     } catch (err) {
       console.log(err);
@@ -29,13 +31,16 @@ export default function Signup() {
   return (
     <Card>
       <CardTitle>SignUp</CardTitle>
-      <Form onSubmit={(e) => onSubmit(e)}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Field>
           <Label htmlFor="eFirstNamemail">FirstName :</Label>
           <br />
           <Input
             type="text"
             id="FirstName"
+            name="firstName"
+            ref={register}
+            value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </Field>
@@ -45,13 +50,23 @@ export default function Signup() {
           <Input
             type="text"
             id="LastName"
+            name="lastName"
+            ref={register}
+            value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
         </Field>
         <Field>
           <Label htmlFor="email">Email :</Label>
           <br />
-          <Input type="text" id="email" onChange={(e) => setEmail(e.target.value)} />
+          <Input
+            type="text"
+            name="email"
+            id="email"
+            ref={register}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </Field>
         <Field>
           <Label htmlFor="password">Password :</Label>
@@ -59,6 +74,9 @@ export default function Signup() {
           <Input
             type="password"
             id="password"
+            name="password"
+            ref={register}
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Field>
