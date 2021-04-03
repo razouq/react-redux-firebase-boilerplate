@@ -9,8 +9,8 @@ export const createEntity = (entity) => {
       })
       .then(() => {
         dispatch({
-          type: 'CREATE_ENTITY',
-          entity,
+          type: 'CLEAR_ERRORS',
+          payload: entity,
         });
       })
       .catch((err) => {
@@ -20,4 +20,13 @@ export const createEntity = (entity) => {
         });
       });
   };
+};
+
+export const fetchEntity = (id) => (dispatch, getState, getFirebase) => {
+  const firestore = getFirebase().firestore();
+  return firestore
+    .collection('entities')
+    .doc(id)
+    .get()
+    .then((doc) => console.log(doc.data()));
 };

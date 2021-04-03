@@ -8,6 +8,7 @@ export default function UserLinks() {
   return (
     <Links>
       <Action to="/create-entity">Create Entity</Action>
+      <Li to="/list-entities">List Entities</Li>
       <Li to="/profile">Profile</Li>
       <Li to="/" onClick={() => dispatch(logOut())}>
         LogOut

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layouts/Navbar';
 import Home from './components/page/Home';
@@ -7,6 +6,8 @@ import CreateEntity from './components/entity/CreateEntity';
 import ListEntities from './components/entity/ListEntities';
 import LogIn from './components/auth/LogIn';
 import SignUp from './components/auth/SignUp';
+import { Container } from '@elements/app';
+import EditEntity from './components/entity/EditEntity';
 
 function App() {
   return (
@@ -14,30 +15,16 @@ function App() {
       <Container>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/create-entity">
-            <CreateEntity></CreateEntity>
-          </Route>
-          <Route path="/list-entities">
-            <ListEntities></ListEntities>
-          </Route>
-          <Route path="/login">
-            <LogIn></LogIn>
-          </Route>
-          <Route path="/signup">
-            <SignUp></SignUp>
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/create-entity" component={CreateEntity} />
+          <Route path="/edit-entity/:entityId" component={EditEntity} />
+          <Route path="/list-entities" component={ListEntities} />
+          <Route path="/login" component={LogIn} />
+          <Route path="/signup" component={SignUp} />
         </Switch>
       </Container>
     </Router>
   );
 }
-
-const Container = styled.div`
-  max-width: 1500px;
-  margin: 0 auto;
-`;
 
 export default App;

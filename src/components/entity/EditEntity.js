@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { createEntity } from '@store/actions/entityActions';
+import { fetchEntity } from '@store/actions/entityActions';
 import { Button, Field, Form, H1, Input, Label, Textarea } from '@elements/entity';
+
 
 const schema = yup.object().shape({
   name: yup.string().test({
@@ -20,20 +21,25 @@ const schema = yup.object().shape({
   }),
 });
 
-export default function CreateEntity() {
+const EditEntity = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
   const history = useHistory();
   const dispatch = useDispatch();
+  const { entityId } = useParams();
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
 
+  useEffect(() => {
+    console.log(entityId);
+    dispatch(fetchEntity(entityId));
+  });
+
   const onSubmit = (data) => {
     console.log(errors);
     try {
-      dispatch(createEntity(data));
       history.push('/list-entities');
     } catch (e) {
       console.error(e);
@@ -73,4 +79,6 @@ export default function CreateEntity() {
       </Form>
     </div>
   );
-}
+};
+
+export default EditEntity;

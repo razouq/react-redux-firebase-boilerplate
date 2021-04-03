@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Form = styled.form`
   background-color: #f3724a;
@@ -112,7 +113,7 @@ export const Td = styled.td`
   border: 1px solid #ddd;
 `;
 
-export const EditButton = styled.a`
+export const EditButton = styled(Link)`
   display: inline-block;
   padding: 0.5rem 1.5rem;
   margin: 0.5rem;

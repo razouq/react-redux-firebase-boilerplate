@@ -16,7 +16,7 @@ const ListEntities = () => {
       <Td>{entities[key].name}</Td>
       <Td>{entities[key].description}</Td>
       <Td>
-        <EditButton href="#">edit</EditButton>
+        <EditButton to={`/edit-entity/${key}`}>edit</EditButton>
         <DeleteButton href="#">delete</DeleteButton>
       </Td>
     </Tr>

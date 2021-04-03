@@ -5,6 +5,7 @@ const initState = {
 const entityReducer = (state = initState, action) => {
   switch (action.type) {
     case 'CREATE_ENTITY':
+      console.log('creeeeeate');
       return state;
     case 'CREATE_ENTITY_ERROR':
       return state;
