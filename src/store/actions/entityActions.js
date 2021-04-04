@@ -28,5 +28,10 @@ export const fetchEntity = (id) => (dispatch, getState, getFirebase) => {
     .collection('entities')
     .doc(id)
     .get()
-    .then((doc) => console.log(doc.data()));
+    .then((doc) =>
+      dispatch({
+        type: 'FETCH_ENTITY',
+        payload: doc.data(),
+      }),
+    );
 };
